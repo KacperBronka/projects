@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planer</title>
+    <link
+      rel="icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <span class="nomore"
+      ><p style="font-weight: bold">404</p>
+      <p>No tutorials found :(</p></span
+    >
+    <header>
+      <input type="search" />
+      <div class="filter-container">
+        <span class="filtruj">Importance:</span><br />
+        <div class="filter-1">
+          <div class="filter-1-dot dot"></div>
+          1
+        </div>
+        <div class="filter-2">
+          <div class="filter-2-dot dot"></div>
+          2
+        </div>
+        <div class="filter-3">
+          <div class="filter-3-dot dot"></div>
+          3
+        </div>
+        <div class="filter-4">
+          <div class="filter-4-dot dot"></div>
+          4
+        </div>
+        <br />
+        <span class="ilewyn-con"
+          >Number of tutorials:<span class="ilewyn">6</span></span
+        >
+      </div>
+    </header>
+    <div class="grid">
+      <div class="subgrid i2">
+        <span class="title">JavaScript</span>
+        <div class="img-con">
+          <img
+            src="https://cdn.iconscout.com/icon/free/png-256/javascript-2752148-2284965.png"
+            alt="JavaScript"
+          />
+        </div>
+        <button onclick="openWeb('js');" class="redirect">
+          Open JS tutorial
+        </button>
+      </div>
+      <!-- ------------------------------------------------------------- -->
+      <div class="subgrid i3">
+        <span class="title">Python</span>
+        <div class="img-con">
+          <img
+            src="https://cdn.iconscout.com/icon/free/png-256/python-3521655-2945099.png"
+            alt="Python"
+          />
+        </div>
+        <button onclick="openWeb('python');" class="redirect">
+          Open Python tutorial
+        </button>
+      </div>
+      <!-- --------------------------------------------------------------->
+      <div class="subgrid i2">
+        <span class="title">PHP</span>
+        <div class="img-con">
+          <img
+            src="https://www.php.net/images/logos/new-php-logo.svg"
+            alt="PHP"
+            class="bigger"
+          />
+        </div>
+        <button onclick="openWeb('php');" class="redirect">
+          Open PHP tutorial
+        </button>
+      </div>
+      <!-- --------------------------------------------------------------->
+      <div class="subgrid i3">
+        <span class="title">jQuery</span>
+        <div class="img-con">
+          <img
+            src="https://cdn.iconscout.com/icon/free/png-256/jquery-10-1175155.png"
+            alt="jQuery"
+          />
+        </div>
+        <button onclick="openWeb('jquery');" class="redirect">
+          Open jQuery tutorial
+        </button>
+      </div>
+      <!-- --------------------------------------------------------------->
+      <div class="subgrid i4">
+        <span class="title">Java</span>
+        <div class="img-con">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/226/226777.png"
+            alt="Java"
+          />
+        </div>
+        <button onclick="openWeb('java');" class="redirect">
+          Open Java tutorial
+        </button>
+      </div>
+      <!-- --------------------------------------------------------------->
+      <div class="subgrid i1">
+        <span class="title">C++</span>
+        <div class="img-con">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png"
+            alt="C++"
+          />
+        </div>
+        <button onclick="openWeb('cpp');" class="redirect">
+          Open C++ tutorial
+        </button>
+      </div>
+      <!-- --------------------------------------------------------------->
+      <div class="subgrid i2">
+        <span class="title">C#</span>
+        <div class="img-con">
+          <img
+            src="https://iconape.com/wp-content/png_logo_vector/c-sharp-c-logo.png"
+            alt="C#"
+          />
+        </div>
+        <button onclick="openWeb('cs/index.php');" class="redirect">
+          Open C# tutorial
+        </button>
+      </div>
+      <!-- --------------------------------------------------------------->
+      <div class="subgrid i4">
+        <span class="title">Bootstrap 4</span>
+        <div class="img-con">
+          <img
+            src="https://camo.githubusercontent.com/bec2c92468d081617cb3145a8f3d8103e268bca400f6169c3a68dc66e05c971e/68747470733a2f2f76352e676574626f6f7473747261702e636f6d2f646f63732f352e302f6173736574732f6272616e642f626f6f7473747261702d6c6f676f2d736861646f772e706e67"
+            alt="Bootstrap"
+            class="bigger"
+          />
+        </div>
+        <button onclick="openWeb('bootstrap4');" class="redirect">
+          Open Bootstrap tutorial
+        </button>
+      </div>
+      <!-- --------------------------------------------------------------->
+      <div class="subgrid i2">
+        <span class="title">Node.js</span>
+        <div class="img-con">
+          <img
+            src="https://iconape.com/wp-content/png_logo_vector/node-js-2.png"
+            alt="Node.js"
+            class="bigger"
+          />
+        </div>
+        <button onclick="openWeb('nodejs');" class="redirect">
+          Open Node.js tutorial
+        </button>
+      </div>
+      <!-- --------------------------------------------------------------->
+      <div class="subgrid i4">
+        <span class="title">JSON</span>
+        <div class="img-con">
+          <img
+            src="https://joinup.ec.europa.eu/sites/default/files/inline-images/json-logo.png"
+            alt="JSON"
+            class="bigger"
+          />
+        </div>
+        <button onclick="openWeb('js/js_json.asp');" class="redirect">
+          Open JSON tutorial
+        </button>
+      </div>
+      <!-- --------------------------------------------------------------->
+      <div class="subgrid i4">
+        <span class="title">Sass</span>
+        <div class="img-con">
+          <img
+            src="https://cdn.iconscout.com/icon/free/png-256/sass-226054.png"
+            alt="Sass"
+            class="bigger"
+          />
+        </div>
+        <button onclick="openWeb('sass');" class="redirect">
+          Open Sass tutorial
+        </button>
+      </div>
+      <!-- --------------------------------------------------------------->
+      <div class="subgrid i4">
+        <span class="title">TypeScript</span>
+        <div class="img-con">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png"
+            alt="TypeScript"
+          />
+        </div>
+        <button onclick="openWeb('typescript/index.php');" class="redirect">
+          Open TypeScript tutorial
+        </button>
+      </div>
+      <!-- --------------------------------------------------------------->
+      <div class="subgrid i3">
+        <span class="title">AI4Youth</span>
+        <div class="img-con">
+          <img
+            src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo_%282006-2020%29.svg/1005px-Intel_logo_%282006-2020%29.svg.png"
+            alt="AI4Youth"
+            class="bigger"
+          />
+        </div>
+        <button onclick="openWeb('intel')" class="redirect">
+          Open AI4Youth tutorial
+        </button>
+      </div>
+      <!-- --------------------------------------------------------------->
+    </div>
+  </body>
+</html>
