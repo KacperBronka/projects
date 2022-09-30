@@ -1,0 +1,16 @@
+body {
+  margin:0;
+  background-color: black;
+  color: white;
+  display:flex;
+  flex-wrap:wrap;
+flex-direction:column;
+  font-family: "Courier";
+  font-size: 10pt;
+  line-height: 6pt;
+  min-height:100vh;
+  width:100%;
+}
+video{
+  width:100%;
+}
