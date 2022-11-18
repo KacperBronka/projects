@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js" defer></script>
+    <script src="script.js" defer></script>
+    <style>
+        body{
+            margin:0;
+            overflow: hidden;
+            position: relative;
+        }
+        button{
+            position: absolute;
+            top:20px;
+            left:20px;
+            background-color: rgba(0,255,100,.1);
+            border:2px solid rgba(0,255,100,1);
+            color:white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding:20px;
+            cursor:pointer;
+        }
+        input{
+            position: absolute;
+            top:20px;
+            right:20px;
+            background-color: rgba(0,255,100,.1);
+            border:2px solid rgba(0,255,100,1);
+            color:white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding:20px;
+        }
+        input:invalid{
+            background-color: rgba(255, 60, 0, 0.548);
+            border:2px solid rgb(255, 30, 0);
+            outline:1px solid red;
+        }
+        input:focus-visible:not(:invalid){
+            outline:1px solid lime;
+        }
+        input:disabled{
+            opacity: 0.5;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="FF+[+F-F-F]-[-F+F+F]" pattern="[F\[\]\+-]+">
+</body>
+</html>
