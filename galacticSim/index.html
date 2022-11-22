@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js" defer=""></script>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Galactic sim</title>
+  </head>
+  <body>
+    <div class="settings">
+      <input type="number" name="" id="r" placeholder="Radius" />
+      <input type="number" name="" id="mass" placeholder="Mass" />
+      <span>Static</span><span>Attractor</span>
+      <input type="checkbox" name="" id="static" />
+      <input type="checkbox" name="" id="attract" />
+      <button id="clr">Clear Canvas</button>
+    </div>
+    <div class="menu">
+      <div class="content">
+        <div class="type" data-r="20" data-mass="1000" data-static="true" data-attractor="true">
+          <div class="repres blackHole"></div>
+          <div class="title">Black Hole</div>
+        </div>
+        <div class="type" data-r="1" data-mass="1" data-static="false" data-attractor="false">
+          <div class="repres photon"></div>
+          <div class="title">Photon</div>
+        </div>
+        <div class="type" data-r="80" data-mass="200" data-static="true" data-attractor="true">
+          <div class="repres sun"></div>
+          <div class="title">Sun</div>
+        </div>
+        <div class="type" data-r="50" data-mass="20" data-static="false" data-attractor="false">
+          <div class="repres planet"></div>
+          <div class="title">Regular Planet</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
