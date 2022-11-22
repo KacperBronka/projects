@@ -14,7 +14,7 @@ function setup() {
   planets.push(sun);
   static.push(sun);
   attractors.push(sun);
-  planets.push(new Celestial(width / 2 + 250, height / 2, 50, 20));
+  planets.push(new Celestial(width / 2 + 450, height / 2, 50, 20));
 }
 
 function draw() {
