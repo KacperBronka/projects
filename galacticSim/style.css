@@ -139,3 +139,15 @@ button:hover {
   aspect-ratio: 1/1;
   border: 2px solid gold;
 }
+.super {
+  border-radius: 69%;
+  width: 20px;
+  aspect-ratio: 1/1;
+  background-color: #00ffff;
+  border: 4px solid blue;
+  filter: blur(5px);
+}
+.tip {
+  font-size: 0.8em;
+}
+
