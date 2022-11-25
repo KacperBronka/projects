@@ -125,9 +125,11 @@ function Celestial(x_, y_, r_, mass_, startV_) {
     }
     system.run();
     if (this.r < 6) {
-      if (particleCount < 155) {
+      if (particleCount < 120) {
         //add particles
-        system.addParticle();
+        for(let i=0;i<10;i++){
+                system.addParticle();
+        }
         particleCount++;
       }
       if (!exploded) {
@@ -227,7 +229,7 @@ let Particle = function (position) {
   // this.position.y = this.position.y + random(-1, 1);
 
   this.color = colors[Math.floor(Math.random() * colors.length)];
-  this.lifespan = 70;
+  this.lifespan = 150;
 };
 
 Particle.prototype.run = function () {
@@ -246,10 +248,8 @@ Particle.prototype.update = function () {
 Particle.prototype.display = function () {
   push();
   noStroke();
-  fill(this.color[0], this.color[1], this.color[2], map(this.lifespan, 0, 70, 0, 255));
-  drawingContext.filter = "blur(17px)";
+  fill(this.color[0], this.color[1], this.color[2], map(this.lifespan, 0, 150, 0, 255));
   ellipse(this.position.x, this.position.y, 15, 15);
-  drawingContext.filter = "none";
   pop();
 };
 
