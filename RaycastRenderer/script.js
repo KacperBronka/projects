@@ -64,7 +64,7 @@ function setup() {
   walls.push(new Boundary(0, sceneH, 0, 0));
   emmiter = new Emmiter();
 
-  sliderFOV = createSlider(0, 180, 60);
+  sliderFOV = createSlider(0, 178, 60);
   sliderFOV.input(changeFOV);
   sliderFOV.parent(document.querySelector(".fov"));
   sliderRes = createSlider(5, 200, 100);
