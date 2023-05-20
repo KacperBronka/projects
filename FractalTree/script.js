@@ -22,7 +22,7 @@ function windowResized() {
   background(51);
 }
 function generate() {
-  if(gen>7) return;
+  if(gen>=7) return;
   gen++;
   rules[0].b = document.querySelector("input").value;
   document.querySelector("input").setAttribute("disabled", "");
