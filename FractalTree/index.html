@@ -13,16 +13,22 @@
         position: relative;
       }
       button {
-        position: absolute;
         width: 120px;
-        top: 20px;
-        left: 20px;
         background-color: rgba(0, 255, 100, 0.1);
         border: 2px solid rgba(0, 255, 100, 1);
         color: white;
         font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
         padding: 20px;
         cursor: pointer;
+      }
+      .buttons {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        top: 20px;
+        left: 20px;
       }
       input {
         position: absolute;
@@ -44,15 +50,86 @@
       }
       input:disabled {
         opacity: 0.5;
+        cursor: not-allowed;
       }
-      .reset {
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .desc_container {
+        position: absolute;
+        bottom: 40px;
+        left: 30px;
+      }
+      .desc {
+        background-color: rgba(0, 255, 100, 0.1);
+        border: 2px solid rgba(0, 255, 100, 1);
+        color: white;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        padding: 20px;
+        transform-origin: left bottom;
+        scale: 0;
+        transition: scale 1s;
+      }
+      .desc_container:hover .desc {
+        scale: 1;
+      }
+      .desc_container::before {
+        content: "\01F86D";
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        background-color: rgb(0, 176, 70);
+        translate: -50% 50%;
+        border-radius: 500px;
+        z-index: 9;
+        /* opacity: 0; */
+      }
+      .pattern {
+        box-sizing: border-box;
+        position: absolute;
+        overflow: hidden;
+        line-break: anywhere;
         top: 100px;
+        left: 20px;
+        width: 260px;
+        height: 300px;
+        background-color: rgba(0, 255, 100, 0.1);
+        border: 2px solid rgba(0, 255, 100, 1);
+        color: white;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        padding: 20px;
       }
     </style>
     <title>Fractal Tree using L System</title>
   </head>
   <body>
     <input type="text" value="FF+[+F-F-F]-[-F+F+F]" pattern="[F\[\]\+-]+" />
-    <button class="reset">Reset</button>
+    <div class="buttons">
+      <button class="reset">Reset</button>
+    </div>
+    <div class="pattern">
+      <span>Current pattern:</span><br />
+      <output>FF+[+F-F-F]-[-F+F+F]</output>
+    </div>
+    <div class="desc_container">
+      <div class="desc">
+        Input a pattern, and with every click all 'F's in <br />it will be replaced by that pattern. <br />
+        Next a tree will be drawn based on current pattern. <br />
+        The rules for drawing are as follows:<br />
+        <ul>
+          <li>F = go forwards</li>
+          <li>+ = turn right</li>
+          <li>- = turn left</li>
+          <li>[ = remember the position you are currently in</li>
+          <li>] = go back to that position</li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>

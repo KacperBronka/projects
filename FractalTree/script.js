@@ -15,6 +15,8 @@ function setup() {
   background(51);
   btn = createButton("Generate");
   btn.mousePressed(generate);
+  btn.parent(document.querySelector(".buttons"));
+  btn.addClass("gen");
   translate(width / 2, height);
 }
 function windowResized() {
@@ -22,8 +24,13 @@ function windowResized() {
   background(51);
 }
 function generate() {
-  if(gen>=7) return;
+  if (gen >= 7) {
+    return;
+  }
   gen++;
+  if (gen >= 7) {
+    document.querySelector(".gen").setAttribute("disabled", "");
+  }
   rules[0].b = document.querySelector("input").value;
   document.querySelector("input").setAttribute("disabled", "");
   background(51);
@@ -68,6 +75,7 @@ function generate() {
     }
   }
   sentence = nextSentence;
+  document.querySelector(".pattern output").innerText = sentence.length <= 300 ? sentence : sentence.slice(0, 299) + " ...";
 }
 
 function draw() {
@@ -90,9 +98,17 @@ function Branch(beg, en) {
 }
 
 document.querySelector(".reset").addEventListener("click", () => {
+  gen = 0;
   axiom = "F";
   sentence = axiom;
   len = 50;
   branches = [];
+  document.querySelector(".gen").removeAttribute("disabled");
+  document.querySelector("input").removeAttribute("disabled");
+  document.querySelector(".pattern output").value = document.querySelector("input").value;
   background(51);
+});
+document.querySelector("input").addEventListener("input", () => {
+  document.querySelector("input").value = document.querySelector("input").value.toUpperCase();
+  document.querySelector(".pattern output").innerText = document.querySelector("input").value;
 });
