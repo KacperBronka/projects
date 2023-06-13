@@ -56,12 +56,12 @@ function setup() {
     let x2 = random(sceneW);
     let y1 = random(sceneH);
     let y2 = random(sceneH);
-    walls.push(new Boundary(x1, y1, x2, y2));
+    walls.push(new Boundary(x1, y1, x2, y2, random(0, 360)));
   }
-  walls.push(new Boundary(0, 0, sceneW, 0));
-  walls.push(new Boundary(sceneW, 0, sceneW, sceneH));
-  walls.push(new Boundary(sceneW, sceneH, 0, sceneH));
-  walls.push(new Boundary(0, sceneH, 0, 0));
+  walls.push(new Boundary(0, 0, sceneW, 0, 0, true));
+  walls.push(new Boundary(sceneW, 0, sceneW, sceneH, 0, true));
+  walls.push(new Boundary(sceneW, sceneH, 0, sceneH, 0, true));
+  walls.push(new Boundary(0, sceneH, 0, 0, 0, true));
   emmiter = new Emmiter();
 
   sliderFOV = createSlider(0, 178, 60);
@@ -108,12 +108,15 @@ function draw() {
   translate(sceneW, 0);
   noStroke();
   for (let i = 0; i < scene.length; i++) {
-    const sq = scene[i] * scene[i];
+    const sq = scene[i].record * scene[i].record;
     const WSq = sceneW * sceneW;
-    let b = map(sq, 0, WSq, 255, 0);
-    let h = map(scene[i], 0, sceneW, sceneH, 0);
+    let b = map(sq, 0, WSq, 75, 0);
+    let h = map(scene[i].record, 0, sceneW, sceneH, 0);
 
-    fill(b);
+    colorMode(HSL, 360, 100, 100);
+    let sceneClr = scene[i].color;
+    fill(sceneClr[0], scene[i].edge ? 0 : sceneClr[1], b);
+
     rectMode(CENTER);
     rect(i * w + w / 2, sceneH / 2, w + 1, h);
   }
@@ -121,14 +124,18 @@ function draw() {
 }
 
 class Boundary {
-  constructor(x1, y1, x2, y2) {
+  constructor(x1, y1, x2, y2, _clr, e = false) {
     this.a = createVector(x1, y1);
     this.b = createVector(x2, y2);
+    this.clr = [e ? 0 : _clr, 50, e ? 100 : 50];
+    this.edge = e;
   }
 
   show() {
-    stroke(255);
+    colorMode(HSL, 360, 100, 100);
+    stroke(this.clr[0], this.clr[1], this.clr[2]);
     line(this.a.x, this.a.y, this.b.x, this.b.y);
+    stroke(255);
   }
 }
 
@@ -221,6 +228,8 @@ class Emmiter {
     for (let i = 0; i < this.rays.length; i++) {
       let closest = null;
       let record = Infinity;
+      let clr = [0, 0, 0];
+      let edge = false;
       for (let wall of walls) {
         let pt = this.rays[i].cast(wall);
 
@@ -231,6 +240,8 @@ class Emmiter {
           if (d < record) {
             record = d;
             closest = pt;
+            clr = wall.clr;
+            edge = wall.edge;
           }
         }
       }
@@ -238,7 +249,7 @@ class Emmiter {
         stroke(255, 100);
         line(this.pos.x, this.pos.y, closest.x, closest.y);
       }
-      scene[i] = record;
+      scene[i] = { record: record, color: clr, edge: edge };
     }
     return scene;
   }
