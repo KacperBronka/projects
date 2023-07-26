@@ -7,6 +7,8 @@ function setup() {
   noCanvas();
   video = createCapture(VIDEO);
   video.size(96, 96);
+  video.addClass("videoAsciiEdit");
+  videoNonEdit = createCapture(VIDEO);
   asciiDiv = createDiv();
 }
 function draw() {
